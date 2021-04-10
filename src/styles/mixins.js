@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import colors from "./theme";
 
 const mixins = {
   flexCenter: css`
