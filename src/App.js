@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import styled from "styled-components";
 import theme from "./styles/theme";
@@ -46,14 +46,28 @@ const StyledContainer = styled.div`
 `;
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
+  const handleChange = (event) => {
+    setInputValue([event.target.value]);
+    console.log(inputValue);
+  };
+  const handleSubmission = () => {
+    console.log("On Submission Triggered");
+  };
   return (
     <StyledContainer>
-      <Form>
+      <Form
+        onSubmit={(event) => {
+          event.preventDefault(); //Prevent From Reloading
+          handleSubmission();
+        }}
+      >
         <Form.Label>Find Your OctoProfile</Form.Label>
         <Form.Control
           size="lg"
           type="text"
           placeholder="Enter Your User Name"
+          onChange={(event) => handleChange(event)}
         />
       </Form>
     </StyledContainer>
