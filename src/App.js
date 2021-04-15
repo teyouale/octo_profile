@@ -2,10 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, useParams } from "react-router-dom";
 import FormComponent from "./Components/FormComponent";
 import StyledContainer from "./Components/styles/FormStyles";
-function UserInfo() {
-  let { userName } = useParams();
-  return <div>WeCome To ${userName} GitHub Stats</div>;
-}
+import UserComponent from "./Components/UserComponent";
+
 function App() {
   return (
     <Router>
@@ -15,7 +13,7 @@ function App() {
         </StyledContainer>
       </Route>
       <Route path="/:userName">
-        <UserInfo />
+        <UserComponent />
       </Route>
     </Router>
   );

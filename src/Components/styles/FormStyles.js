@@ -1,20 +1,19 @@
 import styled from "styled-components";
-import theme from "../../style/theme";
-import mixins from "../../style/mixins";
+import { theme, mixins } from "../../style";
 
 const { colors } = theme;
 
 const StyledContainer = styled.div`
   ${mixins.flexCenter};
   height: 100vh;
-
+  background-color: var(--navy);
+  color: var(--lightest-slate);
   form {
     text-align: center;
     background-color: transparent;
     padding: 2rem;
     margin-bottom: 20vh;
     max-width: 600px;
-    text-align: center;
     label {
       display: block;
       font-size: 2.5rem;
